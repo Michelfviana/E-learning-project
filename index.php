@@ -49,7 +49,12 @@ function listServiceTypes() {
 function listConsumers($consumers) {
     echo "Listing all consumers:\n";
     foreach ($consumers as $consumer) {
-        echo "Name: {$consumer['name']}, Age: {$consumer['age']}, Email: {$consumer['email']}, Phone: {$consumer['phone']}, Address: {$consumer['address']}, State: {$consumer['state']}\n";
+        echo "Name: {$consumer['name']}, 
+        Age: {$consumer['age']}, 
+        Email: {$consumer['email']}, 
+        Phone: {$consumer['phone']}, 
+        Address: {$consumer['address']}, 
+        State: {$consumer['state']}\n";
     }
 }
 
@@ -58,7 +63,12 @@ function listServiceProviders($providers) {
     echo "Listing all service providers:\n";
     foreach ($providers as $provider) {
         $service_type = isset($provider['service_type']) ? $provider['service_type'] : 'N/A';
-        echo "Name: {$provider['name']}, Email: {$provider['email']}, Phone: {$provider['phone']}, Address: {$provider['address']}, State: {$provider['state']}, Service Type: {$service_type}\n";
+        echo "Name: {$provider['name']}, 
+        Email: {$provider['email']}, 
+        Phone: {$provider['phone']}, 
+        Address: {$provider['address']}, 
+        State: {$provider['state']}, 
+        Service Type: {$service_type}\n";
     }
 }
 
@@ -67,7 +77,12 @@ function listConsumersByState($consumers, $state) {
     echo "Listing consumers from state $state:\n";
     foreach ($consumers as $consumer) {
         if ($consumer['state'] == $state) {
-            echo "Name: {$consumer['name']}, Age: {$consumer['age']}, Email: {$consumer['email']}, Phone: {$consumer['phone']}, Address: {$consumer['address']}, State: {$consumer['state']}\n";
+            echo "Name: {$consumer['name']}, 
+            Age: {$consumer['age']}, 
+            Email: {$consumer['email']}, 
+            Phone: {$consumer['phone']}, 
+            Address: {$consumer['address']}, 
+            State: {$consumer['state']}\n";
         }
     }
 }
@@ -77,7 +92,11 @@ function listProvidersByType($providers, $type) {
     echo "Listing service providers of type $type:\n";
     foreach ($providers as $provider) {
         if (isset($provider['service_type']) && $provider['service_type'] == $type) {
-            echo "Name: {$provider['name']}, Email: {$provider['email']}, Phone: {$provider['phone']}, Address: {$provider['address']}, State: {$provider['state']}\n";
+            echo "Name: {$provider['name']}, 
+            Email: {$provider['email']}, 
+            Phone: {$provider['phone']}, 
+            Address: {$provider['address']}, 
+            State: {$provider['state']}\n";
         }
     }
 }
@@ -119,7 +138,9 @@ function listServicesByValue(&$services) {
     // Display the sorted services
     for ($i = 0; $i < $numServices; $i++) {
         $detailing = isset($services[$i]['detailing']) ? $services[$i]['detailing'] : 'N/A';
-        echo "Detailing: {$detailing}, Date: {$services[$i]['date']}, Price: ".number_format($services[$i]['price'], 2)."\n";
+        echo "Detailing: {$detailing}, 
+        Date: {$services[$i]['date']}, 
+        Price: ".number_format($services[$i]['price'], 2) . PHP_EOL;
     }
 }
 
@@ -142,34 +163,70 @@ function listConsumersByName(&$consumers) {
 
     // Display the sorted consumers
     for ($i = 0; $i < $numConsumers; $i++) {
-        echo "Name: {$consumers[$i]['name']}, Age: {$consumers[$i]['age']}, Email: {$consumers[$i]['email']}, Phone: {$consumers[$i]['phone']}, Address: {$consumers[$i]['address']}, State: {$consumers[$i]['state']}\n";
+        echo "Name: {$consumers[$i]['name']}, 
+        Age: {$consumers[$i]['age']}, 
+        Email: {$consumers[$i]['email']}, 
+        Phone: {$consumers[$i]['phone']}, 
+        Address: {$consumers[$i]['address']}, 
+        State: {$consumers[$i]['state']}\n";
     }
 }
 
 // Main function
 // Initialization of fictitious data
 $consumers = [
-    ["name" => "jonas", "age" => 25, "email" => "jonas@email.com", "phone" => "123456789", "address" => "Address1", "state" => "SP"],
+    [   
+        "name" => "jonas",
+        "age" => 25,
+        "email" => "jonas@email.com",
+        "phone" => "123456789", 
+        "address" => "Address1", 
+        "state" => "SP"
+    ],
     // ...
     // Add all other consumers here
     // ...
-    ["name" => "daniel", "age" => 30, "email" => "daniel@email.com", "phone" => "8686868686", "address" => "Address50", "state" => "PA"]
+    [   
+        "name" => "daniel", 
+        "age" => 30, 
+        "email" => "daniel@email.com", 
+        "phone" => "8686868686", 
+        "address" => "Address50", 
+        "state" => "PA"
+    ]
 ];
 
 $providers = [
-    ["name" => "Provider1", "email" => "provider1@email.com", "phone" => "987654321", "address" => "ProviderAddress1", "state" => "RJ", "service" => "Online courses"],
+    [   
+        "name" => "Provider1", 
+        "email" => "provider1@email.com", 
+        "phone" => "987654321", 
+        "address" => "ProviderAddress1", 
+        "state" => "RJ", 
+        "service" => "Online courses"
+    ],
     // ...
     // Add all other providers here
     // ...
-    ["name" => "Provider50", "email" => "provider50@email.com", "phone" => "901234567", "address" => "ProviderAddress50", "state" => "SE", "service" => "Service X"]
+    [   
+        "name" => "Provider50", 
+        "email" => "provider50@email.com", 
+        "phone" => "901234567", 
+        "address" => "ProviderAddress50", 
+        "state" => "SE", 
+        "service" => "Service X"
+    ]
 ];
 
 $services = [
-    ["name" => "1. Online courses", "date" => "01/08/2023", "price" => 100.0],
+    [   
+        "name" => "1. Online courses", 
+        "date" => "01/08/2023", 
+        "price" => 100.0
+    ]
     // ...
     // Add all other services here
     // ...
-    ["name" => "7. Reference Materials", "date" => "24/11/2023", "price" => 400]
 ];
 
 $numConsumers = count($consumers);
